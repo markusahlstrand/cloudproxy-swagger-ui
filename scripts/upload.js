@@ -55,6 +55,7 @@ async function uploadFiles(files) {
 const files = getFilesInDirectory("./node_modules/swagger-ui-dist");
 
 uploadFiles(files)
+  .then(() => uploadFile("src/index.html", "docs/index.html"))
   .then(() => {
     console.log("Done");
   })

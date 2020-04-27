@@ -1,10 +1,9 @@
 module.exports = class KvStorage {
-  constructor({ accountId, namespace, authEmail, authKey, ttl = 60 }) {
+  constructor({ accountId, namespace, authEmail, authKey }) {
     this.accountId = accountId;
     this.namespace = namespace;
     this.authEmail = authEmail;
     this.authKey = authKey;
-    this.ttl = ttl;
   }
 
   getUrlForKey(key) {
@@ -31,7 +30,6 @@ module.exports = class KvStorage {
 
   async put(key, value) {
     const url = this.getUrlForKey(key);
-    const ttlQueryString = this.ttl ? `?expiration_ttl=${this.ttl}` : "";
 
     const headers = {
       "X-Auth-Email": this.authEmail,
@@ -39,7 +37,7 @@ module.exports = class KvStorage {
     };
 
     // eslint-disable-next-line no-undef
-    const response = await fetch(url + ttlQueryString, {
+    const response = await fetch(url, {
       method: "PUT",
       headers,
       body: value,

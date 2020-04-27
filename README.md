@@ -12,20 +12,20 @@ The easiest way to use this repo is probably to fork it and modify the index.htm
 - CLOUDFLARE_AUTH_EMAIL
 - KV_NAMESPACE
 
-Run ´npm run upload´ to upload the files to KV-Storage
+Run `npm run upload` to upload the files to KV-Storage
 
 Add the following rule to the cloudworker proxy:
 
 ```
 const rules = [{
-host: "docs.example.:host",
-handlerName: "kvStorage",
-options: {
-kvAccountId: <kvAccountId>,
-kvNamespace: <kvNamespace>,
-kvAuthEmail: <authEmail>,
-kvAuthKey: <authKey>,
-kvBasePath: "docs/",
-defaultIndexDocument: "index.html",
+  host: "docs.example.:host",
+  handlerName: "kvStorage",
+  options: {
+  kvAccountId: <kvAccountId>,
+  kvNamespace: <kvNamespace>,
+  kvAuthEmail: <authEmail>,
+  kvAuthKey: <authKey>,
+  kvBasePath: "docs/",
+  defaultIndexDocument: "index.html",
 }];
 ```

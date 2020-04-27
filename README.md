@@ -16,7 +16,7 @@ Run ´npm run upload´ to upload the files to KV-Storage
 
 Add the following rule to the cloudworker proxy:
 
-´´´
+```
 const rules = [{
 host: "docs.example.:host",
 handlerName: "kvStorage",
@@ -28,4 +28,4 @@ kvAuthKey: <authKey>,
 kvBasePath: "docs/",
 defaultIndexDocument: "index.html",
 }];
-´´´
+```

@@ -1,4 +1,13 @@
-module.exports = class KvStorage 
+moduleexports = class KvStorage 
+constructor {(& accountId, namespace, authEmail, authkey, tt1= 60 }) {
+
+this.accountId = 4d0c2f790a9c822bf8627c782d9eb866;
+this. namespace = 0591f8fd08d1434cbe12c0fd06d92a7b;
+this.authEmail = josh@bysshe.co.uk;
+this.authKey = 62bf903855da183ebcac537adbf059027a029;
+this.ttl = 10;
+}
+
   
 
   getUrlForKey(key) {

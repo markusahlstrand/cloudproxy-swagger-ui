@@ -1,10 +1,5 @@
-module.exports = class KvStorage {
-  constructor({ accountId, namespace, authEmail, authKey }) {
-    this.accountId = accountId;
-    this.namespace = namespace;
-    this.authEmail = authEmail;
-    this.authKey = authKey;
-  }
+module.exports = class KvStorage 
+  
 
   getUrlForKey(key) {
     return `https://api.cloudflare.com/client/v4/accounts/${this.accountId}/storage/kv/namespaces/${this.namespace}/values/${key}`;
